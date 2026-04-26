@@ -1,0 +1,8 @@
+.tmp_payload.json
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+.claude/
