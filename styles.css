@@ -604,6 +604,7 @@ section { padding: 120px 48px; position: relative; }
   border-radius: 2px;
 }
 .legend-dot.available { background: #fff; border: 1px solid var(--line); }
+.legend-dot.pending { background: #e8d18a; border: 1px solid #c9aa55; }
 .legend-dot.booked { background: #c8b39a; opacity: 0.4; }
 .legend-dot.selected { background: var(--gold); }
 
@@ -656,6 +657,13 @@ section { padding: 120px 48px; position: relative; }
   color: var(--gold);
 }
 .cal-day.empty { background: transparent; border-color: transparent; cursor: default; }
+.cal-day.pending { background: #fbf2d4; color: #8a6a14; border-color: #e6cf7a; cursor: pointer; }
+.cal-day.pending::before {
+  content: ''; position: absolute;
+  top: 4px; right: 4px;
+  width: 6px; height: 6px;
+  background: #c9aa55; border-radius: 50%;
+}
 .cal-day.booked { background: #f0e7d8; color: #b5a48f; cursor: not-allowed; text-decoration: line-through; opacity: 0.6; }
 .cal-day.selected { background: var(--gold); color: #fff; border-color: var(--gold); }
 .cal-day.today { font-weight: 600; }
@@ -674,6 +682,56 @@ section { padding: 120px 48px; position: relative; }
   font-size: 14px;
 }
 .cal-selected-info strong { color: var(--gold-deep); display: block; margin-bottom: 4px; font-family: var(--display); font-size: 18px; font-weight: 500; }
+.cal-selected-info.success { border-left-color: #4a8a55; background: #e8f3eb; }
+.cal-selected-info.success strong { color: #2e6b3a; }
+
+.cal-booking-form {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--bg-cream);
+  border-left: 2px solid var(--gold);
+  display: flex; flex-direction: column; gap: 14px;
+  font-size: 14px;
+}
+.cal-booking-form > strong {
+  color: var(--gold-deep); font-family: var(--display); font-size: 19px; font-weight: 500;
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.cal-booking-form label {
+  display: flex; flex-direction: column; gap: 4px;
+  font-size: 12px; letter-spacing: 0.05em; color: var(--ink-soft); text-transform: uppercase;
+  font-weight: 500;
+}
+.cal-booking-form .muted { text-transform: none; letter-spacing: 0; opacity: 0.7; font-weight: 400; }
+.cal-booking-form input, .cal-booking-form select, .cal-booking-form textarea {
+  font: inherit; padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink); text-transform: none; letter-spacing: 0;
+  font-size: 14px;
+  transition: border-color 0.15s;
+}
+.cal-booking-form input:focus, .cal-booking-form select:focus, .cal-booking-form textarea:focus {
+  outline: none; border-color: var(--gold);
+}
+.cal-booking-form textarea { resize: vertical; min-height: 56px; font-family: inherit; }
+.cal-form-error {
+  background: #fdecea; color: #8a2e22;
+  padding: 10px 12px; border-left: 2px solid #c44a3a;
+  font-size: 13px;
+}
+.cal-form-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 4px; }
+.cal-booking-form .btn-primary, .cal-booking-form .btn-ghost {
+  padding: 10px 18px; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  font-weight: 500; cursor: pointer; border: 1px solid var(--gold);
+  transition: all 0.15s;
+}
+.cal-booking-form .btn-primary { background: var(--gold); color: #fff; }
+.cal-booking-form .btn-primary:hover:not(:disabled) { background: var(--gold-deep); border-color: var(--gold-deep); }
+.cal-booking-form .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+.cal-booking-form .btn-ghost { background: transparent; color: var(--gold-deep); }
+.cal-booking-form .btn-ghost:hover:not(:disabled) { background: var(--gold); color: #fff; }
+.cal-booking-form .btn-ghost:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* ============ TESTIMONIALS ============ */
 .testimonials {

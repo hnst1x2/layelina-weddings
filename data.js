@@ -1,4 +1,9 @@
 // Static data for Layelina venue site
+window.LAYELINA_SUPABASE = {
+  url: "https://asxfryqolkysqeudwezj.supabase.co",
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzeGZyeXFvbGt5c3FldWR3ZXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyOTcxNjEsImV4cCI6MjA5Mjg3MzE2MX0.A2UdSMY-OxwGGbL7mhRJXIaxgrWEuJNR54hPpVtgiSY",
+};
+
 window.LAYELINA_DATA = {
   brand: {
     name: "Layelina",
